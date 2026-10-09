@@ -3,12 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MacroBot AI Solutions</title>
+    <title>MacroBot AI | On-Device Voice & Embedded AI Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 1.5rem; font-weight: 700; color: #38bdf8; text-decoration: none; display: flex; align-items: center; gap: 8px; }
+        .hero { text-align: center; padding: 100px 20px 80px; max-width: 900px; margin: 0 auto; }
+        .badge { background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; display: inline-block; margin-bottom: 20px; }
+        h1 { font-size: 3.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(to right, #ffffff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        p.hero-text { font-size: 1.2rem; color: #94a3b8; margin-bottom: 35px; }
+        .cta-btn { background: #0284c7; color: white; padding: 14px 32px; text-decoration: none; font-weight: 600; border-radius: 8px; transition: 0.3s; display: inline-block; }
+        .cta-btn:hover { background: #0369a1; transform: translateY(-2px); }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; padding: 60px 8%; max-width: 1200px; margin: 0 auto; }
+        .card { background: #1e293b; border: 1px solid #334155; padding: 30px; border-radius: 12px; transition: 0.3s; }
+        .card:hover { border-color: #38bdf8; transform: translateY(-5px); }
+        .card h3 { color: #f8fafc; margin-bottom: 12px; font-size: 1.25rem; }
+        .card p { color: #94a3b8; font-size: 0.95rem; }
+        footer { text-align: center; padding: 40px; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.9rem; margin-top: 60px; }
+    </style>
 </head>
-<body style="font-family: Arial, sans-serif; text-align: center; padding: 50px; background-color: #f9f9f9; color: #333;">
-    <h1 style="color: #2c3e50;">MacroBot AI</h1>
-    <p style="font-size: 18px;">Building next-generation offline voice assistant systems and embedded AI solutions.</p>
-    <hr style="width: 50%; margin: 30px auto; border: 0; border-top: 1px solid #ccc;">
-    <p>Contact us: <a href="mailto:dev@macrobot.me">dev@macrobot.me</a></p>
+<body>
+
+    <nav>
+        <a href="#" class="logo">⚡ MacroBot AI</a>
+        <div>
+            <a href="mailto:dev@macrobot.me" class="cta-btn" style="padding: 8px 18px; font-size: 0.9rem;">Contact Sales</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <span class="badge">Next-Gen Voice Intelligence</span>
+        <h1>Building On-Device Voice AI for Embedded Systems</h1>
+        <p class="hero-text">MacroBot AI specializes in offline wake word detection, intent recognition, and edge AI deployment for smart hardware, IoT, and desktop platforms.</p>
+        <a href="mailto:dev@macrobot.me" class="cta-btn">Request Commercial Trial</a>
+    </section>
+
+    <section class="features">
+        <div class="card">
+            <h3>🎙️ Offline Wake Word</h3>
+            <p>Custom voice trigger models running locally with ultra-low power consumption and minimal RAM usage.</p>
+        </div>
+        <div class="card">
+            <h3>🧠 Speech-to-Intent</h3>
+            <p>Natural language understanding at the edge without cloud latency or internet connectivity required.</p>
+        </div>
+        <div class="card">
+            <h3>🔒 Zero Data Leakage</h3>
+            <p>100% private, enterprise-grade voice processing that keeps all audio data strictly on the physical device.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 MacroBot AI Technologies. All rights reserved. | Contact: dev@macrobot.me</p>
+    </footer>
+
 </body>
 </html>
