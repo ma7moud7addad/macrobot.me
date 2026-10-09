@@ -1,63 +1,214 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MacroBot AI | On-Device Voice & Embedded AI Solutions</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0b0f19" />
+    <meta name="description" content="MacroBot AI builds production-grade on-device voice AI for embedded systems and IoT." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
-        body { background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
-        nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(10px); border-bottom: 1px solid #1e293b; position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 1.5rem; font-weight: 700; color: #38bdf8; text-decoration: none; display: flex; align-items: center; gap: 8px; }
-        .hero { text-align: center; padding: 100px 20px 80px; max-width: 900px; margin: 0 auto; }
-        .badge { background: rgba(56, 189, 248, 0.1); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3); padding: 6px 16px; border-radius: 20px; font-size: 0.875rem; font-weight: 600; display: inline-block; margin-bottom: 20px; }
-        h1 { font-size: 3.2rem; font-weight: 700; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(to right, #ffffff, #94a3b8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        p.hero-text { font-size: 1.2rem; color: #94a3b8; margin-bottom: 35px; }
-        .cta-btn { background: #0284c7; color: white; padding: 14px 32px; text-decoration: none; font-weight: 600; border-radius: 8px; transition: 0.3s; display: inline-block; }
-        .cta-btn:hover { background: #0369a1; transform: translateY(-2px); }
-        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; padding: 60px 8%; max-width: 1200px; margin: 0 auto; }
-        .card { background: #1e293b; border: 1px solid #334155; padding: 30px; border-radius: 12px; transition: 0.3s; }
-        .card:hover { border-color: #38bdf8; transform: translateY(-5px); }
-        .card h3 { color: #f8fafc; margin-bottom: 12px; font-size: 1.25rem; }
-        .card p { color: #94a3b8; font-size: 0.95rem; }
-        footer { text-align: center; padding: 40px; border-top: 1px solid #1e293b; color: #64748b; font-size: 0.9rem; margin-top: 60px; }
+:root{--bg:#0b0f19;--bg-deep:#080b12;--surface:#101722;--surface-2:#121c2b;--line:rgba(148,163,184,.16);--line-bright:rgba(125,211,252,.3);--text:#f4f8fc;--muted:#91a1b4;--muted-2:#5d6b7d;--cyan:#38bdf8;--cyan-bright:#7dd3fc;--blue:#2563eb;--violet:#6d5dfc;--green:#67e8a5;--mono:"DM Mono",monospace;--sans:"Inter",ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);font-size:15px;line-height:1.6;overflow-x:hidden}body:before{content:"";position:fixed;z-index:-3;inset:0;background:linear-gradient(180deg,rgba(11,15,25,.2),var(--bg) 42%,#0b1019)}.site-noise{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='.7'/%3E%3C/svg%3E")} .mesh{position:absolute;z-index:-2;pointer-events:none;filter:blur(1px);border-radius:50%;opacity:.54}.mesh-one{width:640px;height:420px;top:80px;right:-150px;background:radial-gradient(ellipse,rgba(37,99,235,.18),rgba(56,189,248,.07) 35%,transparent 70%);animation:meshFloat 18s ease-in-out infinite}.mesh-two{width:560px;height:500px;top:570px;left:-250px;background:radial-gradient(ellipse,rgba(109,93,252,.11),rgba(56,189,248,.04) 40%,transparent 72%);animation:meshFloat 24s ease-in-out -8s infinite reverse}.container{width:min(1160px,calc(100% - 64px));margin:0 auto}.mono{font-family:var(--mono);font-size:11px;letter-spacing:.02em}.site-header{position:sticky;z-index:20;top:0;border-bottom:1px solid rgba(148,163,184,.08);background:rgba(11,15,25,.74);backdrop-filter:blur(18px)}.nav{height:76px;display:flex;align-items:center;gap:36px}.brand{display:inline-flex;align-items:center;gap:10px;color:var(--text);text-decoration:none;white-space:nowrap}.brand-mark{width:33px;height:33px;display:inline-flex}.brand-mark svg{width:100%;height:100%}.brand-name{font-size:15px;font-weight:700;letter-spacing:-.04em}.brand-name span{color:var(--cyan);font-weight:600}.nav-links{display:flex;align-items:center;gap:27px;margin-left:auto}.nav-links a,.footer-links a{color:var(--muted);font-size:12px;text-decoration:none;transition:color .2s ease}.nav-links a:hover,.footer-links a:hover,.footer-email:hover{color:var(--cyan-bright)}.button{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:46px;border-radius:8px;padding:0 18px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:-.01em;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease,background .2s ease;color:var(--text);white-space:nowrap}.button:hover{transform:translateY(-2px)}.button-primary{color:#03111b;background:linear-gradient(135deg,#7dd3fc,#38bdf8);box-shadow:0 12px 30px rgba(56,189,248,.13)}.button-primary:hover{box-shadow:0 16px 35px rgba(56,189,248,.26)}.button-ghost{border:1px solid rgba(125,211,252,.26);background:rgba(56,189,248,.05)}.button-ghost:hover{border-color:rgba(125,211,252,.62);background:rgba(56,189,248,.1)}.button-small{min-height:37px;padding:0 14px;font-size:11px}.button-link{padding-left:0;padding-right:0;color:#bad2e6;background:transparent}.button-link:hover{color:var(--cyan-bright)}.button-arrow{font-size:16px;line-height:1}.menu-toggle{display:none;border:0;background:transparent;padding:8px}.menu-toggle span{display:block;width:22px;height:1px;margin:5px 0;background:var(--cyan-bright)}.hero{min-height:650px;display:grid;grid-template-columns:1fr .92fr;align-items:center;gap:72px;padding-top:66px;padding-bottom:88px}.release-badge{display:inline-flex;align-items:center;gap:9px;max-width:100%;color:var(--cyan-bright);font:500 10px var(--mono);letter-spacing:.02em;text-decoration:none;border:1px solid rgba(56,189,248,.2);background:rgba(56,189,248,.06);padding:7px 10px;border-radius:5px;transition:border-color .2s ease,background .2s ease}.release-badge:hover{border-color:rgba(56,189,248,.5);background:rgba(56,189,248,.1)}.release-dot,.status-dot,.platform-dot{width:6px;height:6px;flex:0 0 auto;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(56,189,248,.1),0 0 12px var(--cyan)}.badge-divider{width:1px;height:12px;background:rgba(125,211,252,.25)}.badge-arrow{font:14px var(--sans);margin-left:2px}.eyebrow{margin:30px 0 16px;color:#7690a8;font:500 10px var(--mono);letter-spacing:.13em}.hero h1,.section-heading h2,.cta-content h2{margin:0;letter-spacing:-.065em;line-height:1.02;font-size:clamp(49px,6vw,77px);font-weight:700}.hero h1 span,.section-heading h2 span,.cta-content h2 span{color:var(--cyan-bright)}.hero-lede{max-width:550px;margin:27px 0 0;color:#9eafc0;font-size:16px;line-height:1.75;letter-spacing:-.014em}.hero-actions{display:flex;align-items:center;gap:25px;margin-top:31px}.hero-proof{display:flex;align-items:center;gap:9px;color:#6f8194;font-size:11px;margin-top:33px}.proof-check{display:inline-flex;align-items:center;justify-content:center;width:16px;height:16px;color:var(--cyan);font-size:10px;border:1px solid rgba(56,189,248,.34);border-radius:50%}.proof-separator{height:13px;width:1px;background:var(--line);margin:0 4px}.hero-visual{position:relative;padding:40px 0 50px}.terminal-window{position:relative;z-index:2;overflow:hidden;border-radius:11px;background:linear-gradient(145deg,rgba(17,26,41,.92),rgba(10,17,28,.88));box-shadow:0 24px 70px rgba(0,0,0,.36),0 0 80px rgba(37,99,235,.09)}.glass-card{border:1px solid var(--line);background:linear-gradient(145deg,rgba(19,29,44,.68),rgba(10,16,26,.74));box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}.terminal-topbar{height:43px;display:flex;align-items:center;gap:12px;padding:0 15px;border-bottom:1px solid rgba(148,163,184,.11);color:#7790a5}.window-dots{display:flex;gap:5px}.window-dots i{width:7px;height:7px;border-radius:50%;background:#324153}.window-dots i:first-child{background:#7b5b68}.window-dots i:nth-child(2){background:#766c53}.window-dots i:nth-child(3){background:#507665}.terminal-title{display:flex;align-items:center;gap:7px;font:10px var(--mono);letter-spacing:.01em}.terminal-title .status-dot{width:5px;height:5px;box-shadow:none;background:#67e8a5}.terminal-lock{margin-left:auto;color:#50657b;font:19px var(--sans);transform:rotate(45deg)}.terminal-tabs{display:flex;gap:18px;padding:14px 25px 0}.terminal-tab,.play-tab{font:11px var(--mono);color:#688096;background:none;border:0;padding:0 0 11px;cursor:pointer;transition:color .2s ease,border-color .2s ease}.terminal-tab.is-active,.terminal-tab:hover{color:var(--cyan-bright)}.terminal-tab.is-active{border-bottom:1px solid var(--cyan)}.code-block{margin:0;padding:20px 25px 23px;color:#d7e3ec;font:12px/1.85 var(--mono);white-space:pre-wrap}.code-comment{color:#526a7d}.code-keyword{color:#c084fc}.code-type{color:#67e8a5}.code-fn{color:#7dd3fc}.code-string{color:#f6c98b}.terminal-status{display:flex;gap:19px;padding:11px 20px;color:#6d8297;font:10px var(--mono);border-top:1px solid rgba(148,163,184,.11)}.terminal-status>span:first-child{display:flex;align-items:center;gap:7px;margin-right:auto}.pulse{width:5px;height:5px;background:var(--green);border-radius:50%;box-shadow:0 0 8px var(--green)}.terminal-orbit{position:absolute;border:1px solid rgba(56,189,248,.15);border-radius:50%;pointer-events:none}.orbit-a{inset:2% -11% 0 20%;transform:rotate(-18deg)}.orbit-b{inset:12% 7% -15% -16%;transform:rotate(36deg);border-color:rgba(109,93,252,.13)}.floating-chip{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;padding:10px 13px;border:1px solid rgba(125,211,252,.2);border-radius:8px;background:rgba(12,20,32,.9);box-shadow:0 14px 30px rgba(0,0,0,.28);backdrop-filter:blur(10px)}.floating-chip small{display:block;color:#6a8094;font:9px var(--mono);margin-bottom:1px}.floating-chip strong{display:block;color:#dceefa;font:600 13px var(--mono)}.chip-latency{right:-37px;top:37px}.chip-status{bottom:29px;left:-38px}.chip-icon,.chip-check{width:24px;height:24px;display:flex;align-items:center;justify-content:center;color:var(--cyan);border:1px solid rgba(56,189,248,.25);border-radius:6px;font:17px var(--mono)}.chip-check{color:var(--green);border-color:rgba(103,232,165,.25);font-size:12px}.hero-signal{position:absolute;right:-11px;bottom:0;display:flex;align-items:center;gap:8px;color:#557087;font:9px var(--mono);letter-spacing:.08em}.signal-line{height:1px;width:42px;background:linear-gradient(90deg,transparent,var(--cyan))}.signal-wave{width:44px;height:13px;background:linear-gradient(120deg,transparent 44%,rgba(56,189,248,.75) 45%,transparent 48%,transparent 52%,rgba(56,189,248,.75) 53%,transparent 56%,transparent 62%,rgba(56,189,248,.75) 63%,transparent 66%);opacity:.7}.signal-value{color:#7b91a7}.signal-strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(14,22,34,.52)}.signal-grid{min-height:110px;display:grid;grid-template-columns:1.7fr repeat(3,1fr);align-items:center;gap:35px}.signal-kicker{display:block;color:var(--cyan);font:500 10px var(--mono);letter-spacing:.1em}.signal-copy{display:block;margin-top:4px;color:#6f8396;font-size:11px}.strip-stat{position:relative;padding-left:30px}.strip-stat:before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:1px;background:linear-gradient(transparent,var(--cyan),transparent);opacity:.7}.strip-stat strong{display:block;color:#e8f4fb;font:500 25px var(--mono);letter-spacing:-.08em}.strip-stat strong span{color:var(--cyan);font-size:12px;margin-left:2px;letter-spacing:0}.strip-stat>span{color:#6f8396;font-size:10px}.section{padding-top:145px}.section-tight{padding-top:128px}.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:70px;margin-bottom:48px}.section-heading .eyebrow{margin:0 0 17px}.section-heading h2{font-size:clamp(39px,4.7vw,60px)}.section-intro{max-width:342px;color:#788b9e;font-size:13px;line-height:1.8;margin:0 0 4px}.playground{overflow:hidden;border-radius:12px}.playground-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;padding:30px 33px 25px;border-bottom:1px solid var(--line)}.section-label{display:block;color:#6c8298;font:500 10px var(--mono);letter-spacing:.08em}.playground h3{margin:10px 0 0;font-size:20px;letter-spacing:-.04em}.platform-pill{display:flex;align-items:center;gap:9px;color:#8195a7;font:10px var(--mono);padding-top:4px}.platform-dot{width:5px;height:5px;background:var(--green);box-shadow:0 0 8px var(--green)}.platform-separator{height:12px;width:1px;background:var(--line);margin:0 3px}.playground-tabs{display:flex;gap:28px;padding:0 33px;border-bottom:1px solid var(--line);background:rgba(9,15,24,.23)}.play-tab{padding:17px 0 15px}.play-tab.is-active{color:#d3e8f5;border-bottom:1px solid var(--cyan)}.metric-row{display:grid;grid-template-columns:repeat(4,1fr);padding:25px 33px 30px;gap:12px}.metric-card{padding:19px 18px 17px;border:1px solid rgba(148,163,184,.12);border-radius:7px;background:rgba(10,17,28,.5)}.metric-card-accent{border-color:rgba(56,189,248,.25);background:linear-gradient(145deg,rgba(56,189,248,.08),rgba(10,17,28,.56))}.metric-label{display:block;color:#687f95;font:10px var(--mono);letter-spacing:.06em}.metric-card strong{display:block;margin:13px 0 2px;color:#f3f9fd;font:500 28px var(--mono);letter-spacing:-.08em}.metric-card strong span{margin-left:2px;color:var(--cyan);font-size:13px;letter-spacing:0}.metric-note{display:block;color:#60768b;font-size:10px}.pipeline-wrap{padding:22px 33px 34px;border-top:1px solid var(--line)}.pipeline-caption{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}.pipeline-caption .mono{color:#506a80;font-size:9px}.pipeline{display:grid;grid-template-columns:1fr 20px 1fr 20px 1fr 20px 1fr;gap:11px;align-items:center}.pipeline-node{min-height:123px;position:relative;display:flex;flex-direction:column;justify-content:flex-end;padding:15px;border:1px solid rgba(148,163,184,.13);border-radius:7px;background:linear-gradient(150deg,rgba(25,37,53,.65),rgba(11,18,29,.5));overflow:hidden}.pipeline-node:before{content:"";position:absolute;left:0;right:0;top:0;height:1px;background:linear-gradient(90deg,transparent,var(--cyan),transparent);opacity:.5}.node-index{position:absolute;right:12px;top:12px;color:#526a7f;font:9px var(--mono)}.node-icon{display:flex;align-items:center;justify-content:center;width:31px;height:31px;margin-bottom:auto;border:1px solid rgba(56,189,248,.25);border-radius:7px;color:var(--cyan);font:16px var(--mono);background:rgba(56,189,248,.06)}.pipeline-node strong{font-size:12px;letter-spacing:-.02em}.pipeline-node small{color:#62788e;font-size:10px;margin-top:2px}.pipeline-arrow{color:#3d7089;font:18px var(--mono);text-align:center}.node-output{border-color:rgba(56,189,248,.3);background:linear-gradient(150deg,rgba(20,52,71,.5),rgba(11,19,30,.58))}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.feature-card{min-height:260px;display:flex;flex-direction:column;padding:24px 25px 22px;border-radius:9px;transition:transform .25s ease,border-color .25s ease,background .25s ease}.feature-card:hover{transform:translateY(-5px);border-color:rgba(125,211,252,.34);background:linear-gradient(145deg,rgba(25,43,61,.76),rgba(10,17,27,.79))}.feature-top{display:flex;justify-content:space-between;align-items:flex-start}.feature-icon{display:flex;align-items:center;justify-content:center;width:35px;height:35px;border:1px solid rgba(56,189,248,.25);border-radius:8px;color:var(--cyan);font:17px var(--mono);background:rgba(56,189,248,.05)}.feature-index{color:#506b82;font:10px var(--mono)}.feature-card h3{margin:29px 0 9px;font-size:15px;letter-spacing:-.03em}.feature-card p{margin:0;color:#76899b;font-size:12px;line-height:1.7;max-width:275px}.feature-link{display:inline-flex;align-items:center;gap:8px;margin-top:auto;padding-top:20px;color:#9cc9df;text-decoration:none;font:10px var(--mono);transition:color .2s ease}.feature-link:hover{color:var(--cyan-bright)}.feature-link span{font:14px var(--sans)}.enterprise-grid{display:grid;grid-template-columns:1fr .9fr;gap:110px;align-items:center}.enterprise-copy .eyebrow{margin:0 0 17px}.enterprise-copy h2{font-size:clamp(39px,4.7vw,60px);line-height:1.02;letter-spacing:-.065em;margin:0}.enterprise-copy h2 span{color:var(--cyan-bright)}.enterprise-copy>p:not(.eyebrow){max-width:440px;color:#8295a7;font-size:13px;line-height:1.8;margin:25px 0 27px}.badge-row{display:flex;flex-wrap:wrap;gap:9px}.compliance-badge{display:flex;align-items:center;gap:9px;min-width:125px;padding:10px;border:1px solid rgba(148,163,184,.13);border-radius:7px;background:rgba(18,28,42,.46)}.badge-symbol{display:flex;align-items:center;justify-content:center;width:24px;height:24px;border:1px solid rgba(103,232,165,.26);border-radius:50%;color:var(--green);font-size:11px}.compliance-badge strong{display:block;font:500 11px var(--mono);color:#d3e6f1}.compliance-badge small{display:block;color:#5f768b;font-size:8px;margin-top:1px}.hardware-card{border-radius:10px;padding:23px 24px}.hardware-head{display:flex;justify-content:space-between;align-items:center;padding-bottom:17px;border-bottom:1px solid var(--line)}.hardware-head .mono{color:var(--green);font-size:9px}.hardware-list{padding-top:3px}.hardware-item{display:flex;align-items:center;gap:12px;padding:13px 0;border-bottom:1px solid rgba(148,163,184,.08)}.hardware-item:last-child{border-bottom:0}.hardware-logo{display:flex;align-items:center;justify-content:center;width:30px;height:30px;color:var(--cyan-bright);font:500 14px var(--mono);border-radius:7px;background:rgba(56,189,248,.06);border:1px solid rgba(56,189,248,.16)}.hardware-logo.apple{font-size:11px}.hardware-logo.x86{font-size:9px}.hardware-item strong{display:block;font-size:11px;font-weight:600}.hardware-item small{display:block;color:#5f7589;font-size:9px;margin-top:1px}.hardware-check{margin-left:auto;color:var(--green);font-size:11px}.case-study{display:grid;grid-template-columns:1.15fr 1fr;gap:50px;margin-top:74px;padding:35px 38px;border-radius:11px;overflow:hidden;position:relative}.case-study:before{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle at 10% 35%,rgba(56,189,248,.1),transparent 38%)}.case-quote,.case-metrics{position:relative}.quote-mark{display:block;color:var(--cyan);font:54px/1 Georgia,serif;height:37px}.case-quote blockquote{max-width:560px;margin:12px 0 24px;color:#c6d8e4;font-size:17px;line-height:1.55;letter-spacing:-.03em}.quote-byline{display:flex;align-items:center;gap:10px}.avatar{display:flex;align-items:center;justify-content:center;width:29px;height:29px;color:#03121b;font:600 9px var(--mono);border-radius:50%;background:linear-gradient(145deg,#7dd3fc,#2563eb)}.quote-byline strong{display:block;font-size:10px}.quote-byline small{display:block;color:#60758a;font-size:9px}.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);align-items:center;gap:19px;border-left:1px solid var(--line);padding-left:32px}.case-metrics>div{min-width:0}.case-metrics strong{display:block;color:#ecf8fd;font:500 26px var(--mono);letter-spacing:-.08em}.case-metrics strong span{color:var(--cyan);font-size:14px;letter-spacing:0}.case-metrics>div>span{display:block;margin-top:5px;color:#668097;font-size:10px;line-height:1.45}.cta-section{padding-bottom:145px}.cta-card{position:relative;display:flex;align-items:center;justify-content:space-between;min-height:330px;overflow:hidden;padding:45px 55px;border:1px solid rgba(56,189,248,.21);border-radius:12px;background:linear-gradient(120deg,rgba(16,36,52,.76),rgba(11,17,28,.7) 67%)}.cta-glow{position:absolute;z-index:0;width:490px;height:380px;left:-80px;top:-140px;border-radius:50%;background:radial-gradient(ellipse,rgba(56,189,248,.16),transparent 65%);filter:blur(8px)}.cta-content{position:relative;z-index:1}.cta-content .eyebrow{margin:0 0 15px}.cta-content h2{font-size:clamp(36px,4.2vw,56px)}.cta-content p:not(.eyebrow){margin:19px 0 0;color:#8094a7;font-size:13px}.cta-content .hero-actions{margin-top:25px}.cta-code{position:relative;z-index:1;min-width:240px;padding:22px;border-left:1px solid rgba(56,189,248,.2);color:#a4bdd0;font-size:11px;line-height:2}.cta-code span{color:var(--cyan)}.cta-code em{color:#c084fc;font-style:normal}.cta-code .success{color:var(--green)}.cta-code .muted{color:#526d81}.footer{border-top:1px solid var(--line);background:#090d15}.footer-top{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding-top:65px;padding-bottom:63px}.footer-brand .brand{margin-bottom:22px}.footer-brand p{margin:0;color:#677b8f;font-size:11px;line-height:1.7}.footer-email{display:inline-flex;align-items:center;gap:9px;margin-top:24px;color:#9fc5d9;font:11px var(--mono);text-decoration:none;transition:color .2s ease}.footer-email span{font:15px var(--sans)}.footer-links{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;padding-top:7px}.footer-links>div{display:flex;flex-direction:column;align-items:flex-start;gap:11px}.footer-label{margin-bottom:4px;color:#50677c;font:10px var(--mono);letter-spacing:.08em}.hiring-pill{margin-left:3px;padding:2px 5px;color:var(--green);font:8px var(--mono);border:1px solid rgba(103,232,165,.2);border-radius:4px;background:rgba(103,232,165,.05)}.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:19px 0 22px;color:#506477;font:10px var(--mono);border-top:1px solid rgba(148,163,184,.1)}.footer-status{display:flex;align-items:center;gap:8px}.footer-status .status-dot{width:5px;height:5px;background:var(--green);box-shadow:0 0 8px var(--green)}.footer-spark{color:var(--cyan);font-size:13px}.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}.reveal.is-visible{opacity:1;transform:none}.reveal-delay{transition-delay:.12s}@keyframes meshFloat{0%,100%{transform:translate3d(0,0,0) scale(1)}50%{transform:translate3d(-30px,25px,0) scale(1.05)}}@media(max-width:920px){.container{width:min(100% - 42px,680px)}.nav{height:67px;gap:20px}.nav-links{gap:17px}.nav-links a{font-size:11px}.nav-cta{padding:0 11px}.hero{grid-template-columns:1fr;gap:25px;padding-top:52px}.hero-copy{max-width:670px}.hero-visual{max-width:650px;width:calc(100% - 28px);margin:0 auto}.signal-grid{grid-template-columns:1.5fr repeat(3,1fr);gap:15px}.enterprise-grid{grid-template-columns:1fr;gap:52px}.enterprise-copy>p:not(.eyebrow){max-width:580px}.case-study{grid-template-columns:1fr;gap:28px}.case-metrics{border-left:0;border-top:1px solid var(--line);padding:25px 0 0}.cta-card{padding:38px}.cta-code{display:none}}@media(max-width:680px){.container{width:calc(100% - 32px)}.nav{position:relative}.nav-cta{display:none}.menu-toggle{display:block;margin-left:auto;cursor:pointer}.nav-links{position:absolute;display:none;top:59px;left:0;right:0;flex-direction:column;align-items:stretch;gap:0;padding:8px;border:1px solid var(--line);border-radius:8px;background:rgba(10,17,28,.97);box-shadow:0 18px 38px rgba(0,0,0,.35)}.nav-links.is-open{display:flex}.nav-links a{padding:12px 11px;border-radius:5px;font-size:12px}.nav-links a:hover{background:rgba(56,189,248,.06)}.hero{padding-top:39px;padding-bottom:67px;gap:20px}.release-badge{font-size:8px;gap:6px;white-space:nowrap}.release-badge .badge-divider,.release-badge .badge-arrow{display:none}.hero .eyebrow{margin-top:27px}.hero h1{font-size:clamp(44px,14vw,66px)}.hero-lede{font-size:14px;line-height:1.7;margin-top:22px}.hero-actions{align-items:flex-start;flex-direction:column;gap:17px;margin-top:25px}.hero-proof{flex-wrap:wrap;margin-top:27px}.hero-visual{width:calc(100% - 4px);padding:22px 0 43px}.terminal-topbar{height:38px;padding:0 11px}.terminal-title{font-size:8px}.terminal-tabs{padding:11px 15px 0}.terminal-tab{font-size:9px;padding-bottom:8px}.code-block{padding:15px 14px 17px;font-size:9px;line-height:1.8}.terminal-status{padding:9px 12px;font-size:8px;gap:8px}.chip-latency{right:-7px;top:9px;transform:scale(.84);transform-origin:bottom right}.chip-status{left:-8px;bottom:14px;transform:scale(.84);transform-origin:bottom left}.hero-signal{right:0;font-size:7px}.signal-strip{overflow:hidden}.signal-grid{grid-template-columns:1fr 1fr;gap:0;min-height:150px}.signal-grid>div:first-child{grid-column:1/-1;padding-bottom:17px}.strip-stat{padding:9px 0 0 16px}.strip-stat:nth-child(3){border-left:1px solid var(--line)}.strip-stat:before{left:0;top:15px;bottom:0}.strip-stat strong{font-size:21px}.section,.section-tight{padding-top:94px}.section-heading{display:block;margin-bottom:31px}.section-heading h2{font-size:43px}.section-intro{margin-top:20px;font-size:12px}.playground-head{display:block;padding:23px 20px 20px}.platform-pill{margin-top:16px}.playground-tabs{gap:17px;padding:0 20px;overflow:auto}.play-tab{white-space:nowrap;font-size:9px}.metric-row{grid-template-columns:1fr 1fr;padding:18px 20px 21px;gap:9px}.metric-card{padding:14px 12px}.metric-card strong{font-size:23px;margin-top:10px}.metric-label{font-size:8px}.metric-note{font-size:8px}.pipeline-wrap{padding:19px 20px 23px}.pipeline-caption{display:block;margin-bottom:15px}.pipeline-caption .mono{display:block;margin-top:7px;font-size:8px}.pipeline{display:flex;flex-direction:column;align-items:stretch;gap:7px}.pipeline-arrow{transform:rotate(90deg);height:13px;font-size:16px;text-align:center}.pipeline-node{min-height:78px;padding:12px 14px;justify-content:flex-end}.node-icon{position:absolute;right:14px;top:18px;margin:0;width:27px;height:27px}.node-index{top:11px;right:11px}.pipeline-node strong,.pipeline-node small{padding-right:38px}.feature-grid{grid-template-columns:1fr;gap:9px}.feature-card{min-height:224px;padding:21px 20px}.feature-card h3{margin-top:24px}.enterprise-copy h2{font-size:43px}.badge-row{gap:7px}.compliance-badge{min-width:calc(50% - 4px);padding:9px 8px}.compliance-badge small{font-size:7px}.hardware-card{padding:19px 17px}.case-study{padding:26px 21px;margin-top:42px}.case-quote blockquote{font-size:15px}.case-metrics{gap:11px;padding-top:20px}.case-metrics strong{font-size:21px}.case-metrics>div>span{font-size:8px}.cta-section{padding-bottom:95px}.cta-card{min-height:350px;padding:29px 22px;align-items:flex-start}.cta-content h2{font-size:42px}.cta-content .hero-actions{gap:16px}.footer-top{grid-template-columns:1fr;gap:42px;padding-top:48px;padding-bottom:42px}.footer-links{gap:17px}.footer-links a{font-size:10px}.footer-bottom{flex-wrap:wrap;gap:12px;padding:17px 0 20px;font-size:8px}.footer-bottom>span:last-child{width:100%}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.mesh,.reveal{animation:none;transition:none}.reveal{opacity:1;transform:none}.button,.feature-card{transition:none}}
+
     </style>
-</head>
-<body>
+    <title>MacroBot AI — Voice AI at the edge</title>
+  </head>
+  <body>
+    <div class="site-noise" aria-hidden="true"></div>
+    <div class="mesh mesh-one" aria-hidden="true"></div>
+    <div class="mesh mesh-two" aria-hidden="true"></div>
 
-    <nav>
-        <a href="#" class="logo">⚡ MacroBot AI</a>
-        <div>
-            <a href="mailto:dev@macrobot.me" class="cta-btn" style="padding: 8px 18px; font-size: 0.9rem;">Contact Sales</a>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="MacroBot AI home">
+          <span class="brand-mark" aria-hidden="true">
+            <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="1" y="1" width="32" height="32" rx="10" fill="url(#brand-gradient)" fill-opacity=".13" stroke="url(#brand-stroke)" stroke-width="1.2"/>
+              <path d="M9 21.5c2.1 0 2.8-7.8 5-7.8s2.7 10.6 5 10.6 2.9-14 5.2-14c.8 0 1.2 1 1.8 2.3" stroke="#7DD3FC" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M8.5 25.4h17" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+              <defs><linearGradient id="brand-gradient" x1="4" y1="2" x2="31" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#38BDF8"/><stop offset="1" stop-color="#2563EB"/></linearGradient><linearGradient id="brand-stroke" x1="3" y1="3" x2="30" y2="31" gradientUnits="userSpaceOnUse"><stop stop-color="#7DD3FC" stop-opacity=".78"/><stop offset="1" stop-color="#2563EB" stop-opacity=".18"/></linearGradient></defs>
+            </svg>
+          </span>
+          <span class="brand-name">MacroBot <span>AI</span></span>
+        </a>
+        <div class="nav-links" id="nav-links">
+          <a href="#solutions">Solutions</a>
+          <a href="#technology">Technology</a>
+          <a href="#documentation">Documentation</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#about">About Us</a>
         </div>
-    </nav>
+        <a class="button button-small button-ghost nav-cta" href="mailto:dev@macrobot.me?subject=MacroBot%20AI%20Enterprise%20Key">Request Enterprise Key <span class="button-arrow">↗</span></a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation"><span></span><span></span></button>
+      </nav>
+    </header>
 
-    <section class="hero">
-        <span class="badge">Next-Gen Voice Intelligence</span>
-        <h1>Building On-Device Voice AI for Embedded Systems</h1>
-        <p class="hero-text">MacroBot AI specializes in offline wake word detection, intent recognition, and edge AI deployment for smart hardware, IoT, and desktop platforms.</p>
-        <a href="mailto:dev@macrobot.me" class="cta-btn">Request Commercial Trial</a>
-    </section>
+    <main id="top">
+      <section class="hero container">
+        <div class="hero-copy reveal">
+          <a class="release-badge" href="#technology"><span class="release-dot"></span><span>MacroBot v2.4 Engine Released</span><span class="badge-divider"></span><span>Zero Latency Edge Speech AI</span><span class="badge-arrow">↗</span></a>
+          <p class="eyebrow">VOICE INTELLIGENCE, WHERE THE DEVICE LIVES</p>
+          <h1>Production-grade<br /><span>voice AI</span> for the edge.</h1>
+          <p class="hero-lede">Deploy localized wake word engine, offline intent recognition, and noise-robust speech recognition directly on ARM microcontrollers and edge gateways with zero cloud dependency.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="mailto:dev@macrobot.me?subject=MacroBot%20AI%20Commercial%20License">Get Commercial License <span class="button-arrow">↗</span></a>
+            <a class="button button-link" href="#documentation">Read Architecture Whitepaper <span class="button-arrow">↗</span></a>
+          </div>
+          <div class="hero-proof"><span class="proof-check">✓</span><span>Trusted by teams shipping at the edge</span><span class="proof-separator"></span><span class="mono">SOC 2 READY</span></div>
+        </div>
 
-    <section class="features">
-        <div class="card">
-            <h3>🎙️ Offline Wake Word</h3>
-            <p>Custom voice trigger models running locally with ultra-low power consumption and minimal RAM usage.</p>
-        </div>
-        <div class="card">
-            <h3>🧠 Speech-to-Intent</h3>
-            <p>Natural language understanding at the edge without cloud latency or internet connectivity required.</p>
-        </div>
-        <div class="card">
-            <h3>🔒 Zero Data Leakage</h3>
-            <p>100% private, enterprise-grade voice processing that keeps all audio data strictly on the physical device.</p>
-        </div>
-    </section>
+        <div class="hero-visual reveal reveal-delay" aria-label="MacroBot SDK terminal preview">
+          <div class="terminal-orbit orbit-a"></div><div class="terminal-orbit orbit-b"></div>
+          <div class="terminal-window glass-card">
+            <div class="terminal-topbar"><div class="window-dots"><i></i><i></i><i></i></div><span class="terminal-title"><span class="status-dot"></span> macrobot-sdk / edge_demo</span><span class="terminal-lock">⌁</span></div>
+            <div class="terminal-tabs" role="tablist" aria-label="SDK language examples"><button class="terminal-tab is-active" role="tab" aria-selected="true" data-code="cpp">C++</button><button class="terminal-tab" role="tab" aria-selected="false" data-code="python">Python</button></div>
+            <pre class="code-block" aria-live="polite"><code id="code-output"><span class="code-comment">// Initialize the voice runtime locally</span>
+<span class="code-keyword">auto</span> engine = <span class="code-type">macrobot</span>::<span class="code-fn">Engine</span>({
+  .model = <span class="code-string">"wakeword_v2_4.bin"</span>,
+  .device = <span class="code-string">"/dev/i2s0"</span>,
+  .latency = <span class="code-string">"realtime"</span>
+});
 
-    <footer>
-        <p>&copy; 2026 MacroBot AI Technologies. All rights reserved. | Contact: dev@macrobot.me</p>
+engine.<span class="code-fn">on_intent</span>([](Intent intent) {
+  <span class="code-type">auto</span> payload = intent.<span class="code-fn">to_json</span>();
+  <span class="code-fn">dispatch_local</span>(payload);
+});
+
+engine.<span class="code-fn">listen</span>(); <span class="code-comment">// 8.4ms p95</span></code></pre>
+            <div class="terminal-status"><span><span class="pulse"></span> Listening on device</span><span class="mono">RAM 12.8 MB</span><span class="mono">CPU 4.1%</span></div>
+          </div>
+          <div class="floating-chip chip-latency"><span class="chip-icon">⌁</span><span><small>p95 latency</small><strong>8.4 ms</strong></span></div>
+          <div class="floating-chip chip-status"><span class="chip-check">✓</span><span><small>Cloud dependency</small><strong>None</strong></span></div>
+          <div class="hero-signal"><span class="signal-label">LIVE SIGNAL</span><span class="signal-line"></span><span class="signal-wave"></span><span class="signal-value mono">01 / 04</span></div>
+        </div>
+      </section>
+
+      <section class="signal-strip" aria-label="MacroBot performance highlights">
+        <div class="container signal-grid"><div><span class="signal-kicker">BUILT FOR THE LAST MILE</span><span class="signal-copy">From first wake word to structured intent.</span></div><div class="strip-stat"><strong>&lt;10<span>ms</span></strong><span>trigger detection</span></div><div class="strip-stat"><strong>15<span>MB</span></strong><span>RAM footprint</span></div><div class="strip-stat"><strong>99.4<span>%</span></strong><span>intent accuracy</span></div></div>
+      </section>
+
+      <section class="section container" id="technology">
+        <div class="section-heading reveal"><div><p class="eyebrow">01 / ENGINEERING SURFACE</p><h2>See the intelligence<br /><span>in motion.</span></h2></div><p class="section-intro">A complete voice stack that runs close to the sensor — predictable, observable, and ready for production hardware.</p></div>
+        <div class="playground glass-card reveal">
+          <div class="playground-head"><div><span class="section-label">SDK SHOWCASE / ARCHITECTURE PLAYGROUND</span><h3>One runtime. Every edge.</h3></div><div class="platform-pill"><span class="platform-dot"></span> Runtime healthy <span class="platform-separator"></span><span class="mono">v2.4.0</span></div></div>
+          <div class="playground-tabs" role="tablist" aria-label="Runtime capabilities"><button class="play-tab is-active" data-panel="runtime" role="tab" aria-selected="true">Runtime profile</button><button class="play-tab" data-panel="accuracy" role="tab" aria-selected="false">Model accuracy</button><button class="play-tab" data-panel="deployment" role="tab" aria-selected="false">Deployment fit</button></div>
+          <div class="metric-row" id="metric-row"><div class="metric-card"><span class="metric-label">RAM FOOTPRINT</span><strong>&lt;15<span>MB</span></strong><span class="metric-note">on Cortex-A53</span></div><div class="metric-card"><span class="metric-label">P95 LATENCY</span><strong>&lt;10<span>ms</span></strong><span class="metric-note">wake-to-intent</span></div><div class="metric-card"><span class="metric-label">INTENT ACCURACY</span><strong>99.4<span>%</span></strong><span class="metric-note">grammar-restricted NLU</span></div><div class="metric-card metric-card-accent"><span class="metric-label">DATA LEAVES DEVICE</span><strong>0<span>%</span></strong><span class="metric-note">offline by default</span></div></div>
+          <div class="pipeline-wrap"><div class="pipeline-caption"><span class="section-label">EXECUTION PIPELINE</span><span class="mono">LOCAL / DETERMINISTIC / PRIVATE</span></div><div class="pipeline"><div class="pipeline-node"><span class="node-index">01</span><span class="node-icon">◌</span><strong>Audio input</strong><small>mic / I2S / PCM</small></div><span class="pipeline-arrow">→</span><div class="pipeline-node"><span class="node-index">02</span><span class="node-icon">⌁</span><strong>Feature extraction</strong><small>DSP + denoise</small></div><span class="pipeline-arrow">→</span><div class="pipeline-node"><span class="node-index">03</span><span class="node-icon">✦</span><strong>Local model</strong><small>wake + intent</small></div><span class="pipeline-arrow">→</span><div class="pipeline-node node-output"><span class="node-index">04</span><span class="node-icon">{ }</span><strong>Intent JSON</strong><small>app-ready output</small></div></div></div>
+        </div>
+      </section>
+
+      <section class="section section-tight container" id="solutions">
+        <div class="section-heading reveal"><div><p class="eyebrow">02 / CAPABILITIES</p><h2>Built for the<br /><span>real world.</span></h2></div><p class="section-intro">The hard parts of voice AI, solved for noisy rooms, constrained silicon, and teams who cannot afford a round trip to the cloud.</p></div>
+        <div class="feature-grid">
+          <article class="feature-card glass-card reveal"><div class="feature-top"><span class="feature-icon">⌁</span><span class="feature-index">01</span></div><h3>Offline wake word engine</h3><p>Sub-10ms trigger detection tuned for always-on experiences without a network call.</p><a href="#documentation" class="feature-link">Explore wake words <span>↗</span></a></article>
+          <article class="feature-card glass-card reveal"><div class="feature-top"><span class="feature-icon">{ }</span><span class="feature-index">02</span></div><h3>Speech-to-intent</h3><p>Grammar-restricted local NLU converts voice into reliable, structured actions.</p><a href="#documentation" class="feature-link">View intent schema <span>↗</span></a></article>
+          <article class="feature-card glass-card reveal"><div class="feature-top"><span class="feature-icon">◒</span><span class="feature-index">03</span></div><h3>Edge DSP noise cancellation</h3><p>Far-field voice enhancement that stays intelligible in the places your products live.</p><a href="#documentation" class="feature-link">See DSP stack <span>↗</span></a></article>
+          <article class="feature-card glass-card reveal"><div class="feature-top"><span class="feature-icon">◇</span><span class="feature-index">04</span></div><h3>Cross-platform SDK</h3><p>Ship from C and Rust to Python, Android, iOS, Linux, and every major edge board.</p><a href="#documentation" class="feature-link">Browse SDKs <span>↗</span></a></article>
+          <article class="feature-card glass-card reveal"><div class="feature-top"><span class="feature-icon">⊙</span><span class="feature-index">05</span></div><h3>Zero data leakage</h3><p>100% offline processing for GDPR- and HIPAA-aligned product architectures.</p><a href="#about" class="feature-link">Read our approach <span>↗</span></a></article>
+          <article class="feature-card glass-card reveal"><div class="feature-top"><span class="feature-icon">✧</span><span class="feature-index">06</span></div><h3>Custom model training</h3><p>Fine-tune models for your vocabulary, domain, accents, and product surface.</p><a href="#documentation" class="feature-link">Train a model <span>↗</span></a></article>
+        </div>
+      </section>
+
+      <section class="section enterprise-section container" id="about">
+        <div class="enterprise-grid">
+          <div class="enterprise-copy reveal"><p class="eyebrow">03 / ENTERPRISE READINESS</p><h2>Security is not<br /><span>a feature flag.</span></h2><p>MacroBot is designed for the environments where privacy, uptime, and control are non-negotiable. Keep your audio, models, and customer context on the device.</p><div class="badge-row"><div class="compliance-badge"><span class="badge-symbol">✓</span><span><strong>GDPR</strong><small>Aligned by architecture</small></span></div><div class="compliance-badge"><span class="badge-symbol">✓</span><span><strong>HIPAA</strong><small>Offline-ready processing</small></span></div><div class="compliance-badge"><span class="badge-symbol">◈</span><span><strong>SOC 2</strong><small>Controls in progress</small></span></div></div></div>
+          <div class="hardware-card glass-card reveal reveal-delay"><div class="hardware-head"><span class="section-label">SUPPORTED HARDWARE</span><span class="mono">5 / 5 ONLINE</span></div><div class="hardware-list"><div class="hardware-item"><span class="hardware-logo raspberry">◉</span><span><strong>Raspberry Pi</strong><small>ARM64 / Linux</small></span><span class="hardware-check">✓</span></div><div class="hardware-item"><span class="hardware-logo stm">▦</span><span><strong>STM32</strong><small>Cortex-M / bare metal</small></span><span class="hardware-check">✓</span></div><div class="hardware-item"><span class="hardware-logo esp">∞</span><span><strong>ESP32</strong><small>Xtensa / FreeRTOS</small></span><span class="hardware-check">✓</span></div><div class="hardware-item"><span class="hardware-logo apple">●</span><span><strong>Apple Silicon</strong><small>macOS / iOS</small></span><span class="hardware-check">✓</span></div><div class="hardware-item"><span class="hardware-logo x86">x86</span><span><strong>x86_64</strong><small>Linux / Windows</small></span><span class="hardware-check">✓</span></div></div></div>
+        </div>
+        <div class="case-study glass-card reveal"><div class="case-quote"><span class="quote-mark">“</span><blockquote>MacroBot let us move the product from a cloud demo to a dependable appliance — without compromising the experience or our customers’ privacy.</blockquote><div class="quote-byline"><span class="avatar">AM</span><span><strong>Alex Moreno</strong><small>VP Product, Kinetic Home</small></span></div></div><div class="case-metrics"><div aria-label="Deployed across 2M+ smart home &amp; industrial units"><strong>2M<span>+</span></strong><span>smart home &amp; industrial units deployed</span></div><div><strong>41<span>%</span></strong><span>lower average power draw</span></div><div><strong>0</strong><span>audio bytes sent to the cloud</span></div></div></div>
+      </section>
+
+      <section class="section cta-section container" id="pricing">
+        <div class="cta-card reveal"><div class="cta-glow"></div><div class="cta-content"><p class="eyebrow">READY WHEN YOUR HARDWARE IS</p><h2>Put voice intelligence<br /><span>where it belongs.</span></h2><p>Bring your device, constraints, and roadmap. We’ll bring the runtime.</p><div class="hero-actions"><a class="button button-primary" href="mailto:dev@macrobot.me?subject=MacroBot%20AI%20Schedule%20Demo">Schedule an architecture call <span class="button-arrow">↗</span></a><a class="button button-link" href="#documentation">Read the docs <span class="button-arrow">↗</span></a></div></div><div class="cta-code mono"><span>macrobot</span> <em>deploy</em> --target edge<br /><span class="success">✓</span> runtime ready in 4.2s<br /><span class="muted">// now listening locally</span></div></div>
+      </section>
+    </main>
+
+    <footer class="footer" id="documentation">
+      <div class="container footer-top"><div class="footer-brand"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="1" y="1" width="32" height="32" rx="10" fill="url(#footer-gradient)" fill-opacity=".13" stroke="#38BDF8" stroke-opacity=".45" stroke-width="1.2"/><path d="M9 21.5c2.1 0 2.8-7.8 5-7.8s2.7 10.6 5 10.6 2.9-14 5.2-14c.8 0 1.2 1 1.8 2.3" stroke="#7DD3FC" stroke-width="1.8" stroke-linecap="round"/><path d="M8.5 25.4h17" stroke="#38BDF8" stroke-width="1.4" stroke-linecap="round" opacity=".7"/><defs><linearGradient id="footer-gradient" x1="4" y1="2" x2="31" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#38BDF8"/><stop offset="1" stop-color="#2563EB"/></linearGradient></defs></svg></span><span class="brand-name">MacroBot <span>AI</span></span></a><p>Embedded intelligence for teams<br />shipping real devices.</p><a class="footer-email" href="mailto:dev@macrobot.me">dev@macrobot.me <span>↗</span></a></div><div class="footer-links"><div><span class="footer-label">PRODUCT</span><a href="#solutions">Solutions</a><a href="#technology">Technology</a><a href="#documentation">Documentation</a><a href="#pricing">Pricing</a></div><div><span class="footer-label">COMPANY</span><a href="#about">About Us</a><a href="mailto:dev@macrobot.me">Contact</a><a href="#about">Security</a><a href="#about">Careers <span class="hiring-pill">Hiring</span></a></div><div><span class="footer-label">LEGAL</span><a href="#top">Privacy Policy</a><a href="#top">Terms of Service</a><a href="#top">Cookie Policy</a></div></div></div>
+      <div class="container footer-bottom"><span>© <span id="current-year">2026</span> MacroBot AI Technologies Inc.</span><span class="footer-status"><span class="status-dot"></span> All systems operational</span><span>Built for the edge <span class="footer-spark">✦</span></span></div>
     </footer>
 
-</body>
+    <script>
+const codeExamples = {
+  cpp: `<span class="code-comment">// Initialize the voice runtime locally</span>\n<span class="code-keyword">auto</span> engine = <span class="code-type">macrobot</span>::<span class="code-fn">Engine</span>({\n  .model = <span class="code-string">"wakeword_v2_4.bin"</span>,\n  .device = <span class="code-string">"/dev/i2s0"</span>,\n  .latency = <span class="code-string">"realtime"</span>\n});\n\nengine.<span class="code-fn">on_intent</span>([](Intent intent) {\n  <span class="code-type">auto</span> payload = intent.<span class="code-fn">to_json</span>();\n  <span class="code-fn">dispatch_local</span>(payload);\n});\n\nengine.<span class="code-fn">listen</span>(); <span class="code-comment">// 8.4ms p95</span>`,
+  python: `<span class="code-comment"># Run voice intelligence on the device</span>\n<span class="code-keyword">from</span> <span class="code-type">macrobot</span> <span class="code-keyword">import</span> Engine\n\nengine = Engine(\n    model=<span class="code-string">"wakeword_v2_4.bin"</span>,\n    input=<span class="code-string">"/dev/i2s0"</span>,\n    mode=<span class="code-string">"realtime"</span>\n)\n\n<span class="code-keyword">@engine</span>.<span class="code-fn">on_intent</span>\n<span class="code-keyword">def</span> <span class="code-fn">handle</span>(intent):\n    <span class="code-fn">dispatch_local</span>(intent.json())\n\nengine.<span class="code-fn">listen</span>() <span class="code-comment"># 8.4ms p95</span>`
+};
+
+const metricPanels = {
+  runtime: [
+    ['RAM FOOTPRINT', '&lt;15', 'MB', 'on Cortex-A53'],
+    ['P95 LATENCY', '&lt;10', 'ms', 'wake-to-intent'],
+    ['INTENT ACCURACY', '99.4', '%', 'grammar-restricted NLU'],
+    ['DATA LEAVES DEVICE', '0', '%', 'offline by default']
+  ],
+  accuracy: [
+    ['WAKE WORD RECALL', '98.7', '%', 'at 5dB SNR'],
+    ['P95 LATENCY', '8.4', 'ms', 'wake-to-intent'],
+    ['INTENT ACCURACY', '99.4', '%', 'grammar-restricted NLU'],
+    ['FALSE ACCEPT RATE', '0.08', '%', 'per hour / quiet room']
+  ],
+  deployment: [
+    ['RAM FOOTPRINT', '12.8', 'MB', 'on Cortex-A53'],
+    ['FIRMWARE SIZE', '4.2', 'MB', 'quantized runtime'],
+    ['SUPPORTED TARGETS', '5', '', 'board families'],
+    ['DATA LEAVES DEVICE', '0', '%', 'offline by default']
+  ]
+};
+
+const metricRow = document.querySelector('#metric-row');
+function renderMetrics(panel) {
+  if (!metricRow || !metricPanels[panel]) return;
+  metricRow.innerHTML = metricPanels[panel].map((metric, index) => `
+    <div class="metric-card${index === 3 ? ' metric-card-accent' : ''}">
+      <span class="metric-label">${metric[0]}</span>
+      <strong>${metric[1]}<span>${metric[2]}</span></strong>
+      <span class="metric-note">${metric[3]}</span>
+    </div>`).join('');
+}
+
+document.querySelectorAll('.play-tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.play-tab').forEach((item) => {
+      item.classList.toggle('is-active', item === tab);
+      item.setAttribute('aria-selected', item === tab ? 'true' : 'false');
+    });
+    renderMetrics(tab.dataset.panel);
+  });
+});
+
+document.querySelectorAll('.terminal-tab').forEach((tab) => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.terminal-tab').forEach((item) => {
+      item.classList.toggle('is-active', item === tab);
+      item.setAttribute('aria-selected', item === tab ? 'true' : 'false');
+    });
+    document.querySelector('#code-output').innerHTML = codeExamples[tab.dataset.code];
+  });
+});
+
+const menuButton = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('#nav-links');
+menuButton?.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('is-open');
+  menuButton.setAttribute('aria-expanded', String(open));
+});
+navLinks?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  navLinks.classList.remove('is-open');
+  menuButton?.setAttribute('aria-expanded', 'false');
+}));
+
+document.querySelector('#current-year').textContent = new Date().getFullYear();
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+    </script>
+  </body>
 </html>
